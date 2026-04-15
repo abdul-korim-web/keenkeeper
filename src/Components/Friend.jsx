@@ -1,6 +1,6 @@
 import React, { Suspense, use } from 'react';
 import FriendCard from './FriendCard';
-const fetchFriensdData =  fetch("./data/friends.json").then(res=>res.json())
+const fetchFriensdData =  fetch("/data/friends.json").then(res=>res.json())
 const Friend = () => {
     const friends = use(fetchFriensdData)
     

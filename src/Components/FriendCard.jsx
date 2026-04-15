@@ -1,8 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const FriendCard = ({friend}) => {
+    const navigate = useNavigate()
+
     return (
-        <div className='bg-white p-6 rounded-[8px] shadow-sm flex flex-col items-center space-y-[8px] w-full max-w-[260px]' >
+        <div onClick={()=>navigate(`/friend/${friend?.id}`)} className='bg-white p-6 rounded-[8px] shadow-sm flex flex-col items-center space-y-[8px] w-full max-w-[260px]' >
             <div className='w-[80px] h-[80px] '>
                 <img className='w-full h-full rounded-full object-cover' src={friend?.picture} alt={friend?.name} srcset="" />
             </div>

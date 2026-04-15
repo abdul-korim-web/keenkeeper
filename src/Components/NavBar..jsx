@@ -23,7 +23,7 @@ const NavBar = () => {
     ]
   return (
     <div>
-      <div className="max-lg:collapse bg-white lg:mb-48 shadow-sm w-full rounded-md">
+      <div className="max-lg:collapse bg-white  shadow-sm w-full rounded-md">
         <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
         <label
           htmlFor="navbar-1-toggle"

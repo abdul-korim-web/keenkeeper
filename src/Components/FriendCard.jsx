@@ -13,7 +13,7 @@ const FriendCard = ({friend}) => {
             <p className='text-[#64748B] text-[14px] '>{friend?.days_since_contact} d ago</p>
             <div className='flex flex-wrap justify-center items-center gap-1'>
                 {friend?.tags.map((tag,index)=>(
-                    <p className='p-2 bg-[#cbfadb] rounded-[100px] text-[12px]'>{tag}</p>
+                    <p key={index} className='p-2 bg-[#cbfadb] rounded-[100px] text-[12px]'>{tag}</p>
                 ))}
             </div>
             <p className={ `p-2 ${friend?.status=="on-track" ? "bg-[#244d3f] font-medium text-[#244D3F]" : friend?.status=="almost due" ? "bg-[#EFAD44]":"bg-[#ef4444]"} rounded-[100px] text-[12px] text-white font-medium`}>{friend?.status}</p>

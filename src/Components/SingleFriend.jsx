@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaArchive } from "react-icons/fa";
@@ -6,13 +6,31 @@ import { RiNotificationSnoozeLine } from "react-icons/ri";
 import { IoCallOutline } from "react-icons/io5";   
 import { LuMessageSquareMore } from "react-icons/lu"; 
 import { FaVideo } from "react-icons/fa";
+import { inVoicecontext } from "../Context/InvoiceContext";
 const fetchFriensdData = fetch("/data/friends.json").then((res) => res.json());
 const SingleFriend = () => {
   const friends = use(fetchFriensdData);
   const { id } = useParams();
   const friend = friends.find((data) => data?.id == id);
-  console.log(friend);
-  console.log(id);
+// invoice 
+const {setInVoice,inVoice} = useContext(inVoicecontext)
+const handaleCommunication = (comType,name)=>{
+    let image = ""
+    if (comType =="Text") {
+        image= "./images/text.png"
+    } else if (comType=="Video"){
+        image ="./images/video.png"
+    } else{
+        image="./images/call.png"
+    }
+    const date = new Date()
+    const formateDate = date.toLocaleString("en-US",{
+        month:"long",
+        day:"numeric",
+        year:"numeric"
+    })
+    setInVoice([...inVoice,{name,image,time:formateDate}])
+}
   return (
     <div className="px-5 grid grid-cols-1 lg:grid-cols-12 grid-rows-12 max-w-[1200px] mx-auto  my-20 gap-[24px]">
       <div className=" col-span-12 row-span-12 lg:col-span-4 lg:row-span-12 ">
@@ -106,17 +124,17 @@ const SingleFriend = () => {
         </h2>
         <div className="flex space-x-4  h-full  ">
           <div className="w-full">
-            <button className="btn p-4 rounded-[8px] bg-[#f8fafc] text-[#1F2937] font-medium w-full  h-full flex flex-col space-y-2  ">
+            <button onClick={()=>handaleCommunication("Call",friend?.name)} className="btn p-4 rounded-[8px] bg-[#f8fafc] text-[#1F2937] font-medium w-full  h-full flex flex-col space-y-2  ">
            <IoCallOutline /> <p>Call</p>
           </button>
           </div>
         <div className="w-full">
-             <button className="btn p-4 rounded-[8px] bg-[#f8fafc] text-[#1F2937] font-medium w-full  h-full flex flex-col space-y-2  ">
+             <button onClick={()=>handaleCommunication("Text",friend?.name)} className="btn p-4 rounded-[8px] bg-[#f8fafc] text-[#1F2937] font-medium w-full  h-full flex flex-col space-y-2  ">
             <LuMessageSquareMore  /> <p>Text</p>
           </button>
         </div>
           <div className="w-full">
-            <button className="btn p-4 rounded-[8px] bg-[#f8fafc] text-[#1F2937] font-medium w-full  h-full flex flex-col space-y-2 ">
+            <button onClick={()=>handaleCommunication("Video",friend?.name)} className="btn p-4 rounded-[8px] bg-[#f8fafc] text-[#1F2937] font-medium w-full  h-full flex flex-col space-y-2 ">
             <FaVideo  /> <p>Video</p>
           </button>
           </div>

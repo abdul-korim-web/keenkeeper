@@ -11,7 +11,6 @@ import { inVoicecontext } from "../Context/InvoiceContext";
 
 const Status = ({ isAnimationActive = true }) => {
     const {chartData} = useContext(inVoicecontext)
-    console.log(chartData);
 
   return (
     <div className="w-full max-w-[1200px] mx-auto min-h-screen p-6 mt-[80px] flex flex-col space-y-6">

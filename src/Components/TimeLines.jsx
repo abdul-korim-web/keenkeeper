@@ -7,8 +7,6 @@ const TimeLines = () => {
   const [selectValue, setSelectValue] = useState("All");
   const [filterInVoice, setFilterInVoice] = useState([]);
 
-  console.log("inVoice", inVoice);
-  console.log("filterInVoice", filterInVoice);
 
 
   // when no Timeline  data exit

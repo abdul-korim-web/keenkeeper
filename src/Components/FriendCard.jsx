@@ -7,7 +7,7 @@ const FriendCard = ({friend}) => {
     return (
         <div onClick={()=>navigate(`/friend/${friend?.id}`)} className='bg-white p-6 rounded-[8px] shadow-sm flex flex-col items-center space-y-[8px] w-full max-w-[260px]' >
             <div className='w-[80px] h-[80px] '>
-                <img className='w-full h-full rounded-full object-cover' src={friend?.picture} alt={friend?.name} srcset="" />
+                <img className='w-full h-full rounded-full object-cover' src={friend?.picture} alt={friend?.name}  />
             </div>
             <h2 className='text-[20px] text-[#1F2937] font-semibold'>{friend?.name}</h2>
             <p className='text-[#64748B] text-[14px] '>{friend?.days_since_contact} d ago</p>

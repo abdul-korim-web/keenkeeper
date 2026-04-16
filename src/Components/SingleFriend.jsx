@@ -42,7 +42,6 @@ const handaleCommunication = (comType,name)=>{
               className="w-full h-full rounded-full object-cover"
               src={friend?.picture}
               alt={friend?.name}
-              srcset=""
             />
           </div>
           <h2 className="text-[20px] text-[#1F2937] font-semibold">

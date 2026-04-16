@@ -7,6 +7,7 @@ import { IoCallOutline } from "react-icons/io5";
 import { LuMessageSquareMore } from "react-icons/lu"; 
 import { FaVideo } from "react-icons/fa";
 import { inVoicecontext } from "../Context/InvoiceContext";
+import { toast } from "react-toastify";
 const fetchFriensdData = fetch("/data/friends.json").then((res) => res.json());
 const SingleFriend = () => {
   const friends = use(fetchFriensdData);
@@ -30,7 +31,7 @@ const handaleCommunication = (comType,name)=>{
         year:"numeric"
     })
     setInVoice([...inVoice,{comType,name,image,time:formateDate}])
-    console.log(inVoice);
+    toast.success(`${comType} on ${name}`)
 }
   return (
     <div className="px-5 grid grid-cols-1 lg:grid-cols-12 grid-rows-12 max-w-[1200px] mx-auto  my-20 gap-[24px]">
@@ -71,15 +72,15 @@ const handaleCommunication = (comType,name)=>{
         </div>
         <div className="flex flex-col space-y-2 mt-4">
           {/* button on profile  */}
-          <button className="btn p-4 rounded-[4px] bg-white text-[#1F2937] font-medium">
+          <button onClick={()=>toast.info("This is demo prodect")} className="btn p-4 rounded-[4px] bg-white text-[#1F2937] font-medium">
             <RiNotificationSnoozeLine />
             Snooze 2 weeks
           </button>
-          <button className="btn p-4 rounded-[4px] bg-white text-[#1F2937] font-medium">
+          <button onClick={()=>toast.info("This is demo prodect")} className="btn p-4 rounded-[4px] bg-white text-[#1F2937] font-medium">
             <FaArchive />
             Archive
           </button>
-          <button className="btn p-4 rounded-[4px] bg-white text-[#EF4444] font-medium">
+          <button onClick={()=>toast.info("This is demo prodect")} className="btn p-4 rounded-[4px] bg-white text-[#EF4444] font-medium">
             <RiDeleteBin6Line />
             Delete
           </button>

@@ -33,7 +33,7 @@ const TimeLines = () => {
         defaultValue="Filter timeline"
         className="select border outline-none border-[#9696A2]/30 mt-3 bg-[#F8FAFC] cursor-pointer "
       >
-        <option  className="text-[#64748b]">
+        <option  >
           All
         </option>
         <option>Video</option>

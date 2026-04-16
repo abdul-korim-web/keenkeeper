@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { GrHomeRounded } from "react-icons/gr";
 import { IoTimeOutline } from "react-icons/io5";
 import { TfiStatsUp } from "react-icons/tfi";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
     const navItems = [
@@ -35,6 +35,7 @@ const NavBar = () => {
             <label
               htmlFor="navbar-1-toggle"
               className="btn btn-ghost lg:hidden"
+      
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,15 +52,15 @@ const NavBar = () => {
                 />
               </svg>
             </label>
-            <a className=" text-2xl font-bold text-[#1F2937]">Keen<span className="text-[#244d3f]">Keeper</span></a>
+            <Link to={`/`} className=" text-2xl font-bold text-[#1F2937]">Keen<span className="text-[#244d3f]">Keeper</span></Link>
           </div>
           <div className="navbar-end hidden lg:flex px-[80px]">
             <ul className="menu menu-horizontal px-1">
              {
                 navItems?.map(item=>(
-                    <NavLink to={item?.path} key={item?.name} className="text-[#64748B] font-semibold">
-                     <span>  {item?.icon} {item?.name}</span>
-                        </NavLink>
+                    <li key={item?.name} className="text-[#64748B] font-semibold">
+                     <NavLink className=" py-3 px-4" to={item?.path}>  {item?.icon} {item?.name}</NavLink>
+                        </li>
                 ))
              }
             </ul>
@@ -71,8 +72,8 @@ const NavBar = () => {
           <ul className="menu flex flex-col space-y-3  w-full">
             {
                 navItems?.map(item=>(
-                    <li key={item?.name} className="text-[#64748B] font-semibold">
-                     <span>  {item?.icon} {item?.name}</span>
+                    <li  key={item?.name} className="text-[#64748B] font-semibold">
+                     <NavLink to={item?.path}>  {item?.icon} {item?.name}</NavLink>
                         </li>
                 ))
              }

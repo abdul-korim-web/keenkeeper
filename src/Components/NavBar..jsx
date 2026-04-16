@@ -19,7 +19,7 @@ const NavBar = () => {
         {
             icon: <TfiStatsUp/>,
             name:"Stats",
-            path:"/stats"
+            path:"/status"
         },
     ]
   return (

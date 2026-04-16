@@ -6,6 +6,7 @@ import HomeLagout from './HomeLagout/HomeLagout'
 import Footer from './Components/Footer'
 import SingleFriend from './Components/SingleFriend'
 import TimeLines from './Components/TimeLines'
+import Status from './Components/Status';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
    <Routes>
     <Route path='/' element={<HomeLagout/>}/>
     <Route path='/timeline' element={<TimeLines/>}/>
+    <Route path='/status' element={<Status/>}/>
     <Route path='/friend/:id' element={<SingleFriend/>}/>
    </Routes>
    <Footer/>

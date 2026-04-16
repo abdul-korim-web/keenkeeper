@@ -8,6 +8,7 @@ import SingleFriend from './Components/SingleFriend'
 import TimeLines from './Components/TimeLines'
 import Status from './Components/Status';
 import { ToastContainer } from 'react-toastify'
+import NotFound from './Components/NotFound'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
     <Route path='/timeline' element={<TimeLines/>}/>
     <Route path='/status' element={<Status/>}/>
     <Route path='/friend/:id' element={<SingleFriend/>}/>
+    <Route path='*' element={<NotFound/>}/>
    </Routes>
    <ToastContainer />
    <Footer/>

@@ -29,7 +29,8 @@ const handaleCommunication = (comType,name)=>{
         day:"numeric",
         year:"numeric"
     })
-    setInVoice([...inVoice,{name,image,time:formateDate}])
+    setInVoice([...inVoice,{comType,name,image,time:formateDate}])
+    console.log(inVoice);
 }
   return (
     <div className="px-5 grid grid-cols-1 lg:grid-cols-12 grid-rows-12 max-w-[1200px] mx-auto  my-20 gap-[24px]">

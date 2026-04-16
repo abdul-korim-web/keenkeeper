@@ -2,6 +2,7 @@ import React from "react";
 import { GrHomeRounded } from "react-icons/gr";
 import { IoTimeOutline } from "react-icons/io5";
 import { TfiStatsUp } from "react-icons/tfi";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
     const navItems = [
@@ -56,9 +57,9 @@ const NavBar = () => {
             <ul className="menu menu-horizontal px-1">
              {
                 navItems?.map(item=>(
-                    <li key={item?.name} className="text-[#64748B] font-semibold">
+                    <NavLink to={item?.path} key={item?.name} className="text-[#64748B] font-semibold">
                      <span>  {item?.icon} {item?.name}</span>
-                        </li>
+                        </NavLink>
                 ))
              }
             </ul>

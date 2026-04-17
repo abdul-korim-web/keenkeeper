@@ -98,4 +98,4 @@ Just make sure to keep the original author credit:
 📧 Email: abdulkorimwebdeveloper@gmail.com <br> 
 👉 GitHub: [abdul-korim-web](https://github.com/abdul-korim-web) <br>
 👉 Facebook: [abdul-korim-web](https://www.facebook.com/abdulkorimweb) <br>
-👉 LinkedIn: [abdul-korim-web](linkedin.com/in/abdul-korim-webdeveloper) <br>
+👉 LinkedIn: [abdul-korim-web](https://linkedin.com/in/abdul-korim-webdeveloper) <br>

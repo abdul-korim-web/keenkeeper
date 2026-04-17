@@ -67,9 +67,9 @@ http://localhost:5173
 ```
 src/
  ├── Components/
- ├── Pages/
+ ├── Layout/ (for route )
  ├── Context/
- ├── data/
+ ├── public/data/
  ├── App.jsx
  └── main.jsx
  ```
